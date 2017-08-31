@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A4309A32483D61D5CB08D4DB5ABE660D7756D724",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A4309A32483D61D5CB08D4DB5ABE660D7756D724" : 9223372036854775807,
+    "DCC2226EEE04AF49FEA0107D932CDF4CAE953BE9" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2142BC4B-CD1D-4787-B916-F890594E9E24",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A4309A32483D61D5CB08D4DB5ABE660D7756D724" : "Udemy\/",
+    "DCC2226EEE04AF49FEA0107D932CDF4CAE953BE9" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RetroCalc",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RetroCalc\/RetroCalc.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jscyworld\/Udemy_Lectures.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4309A32483D61D5CB08D4DB5ABE660D7756D724"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jscyworld\/Xcode.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DCC2226EEE04AF49FEA0107D932CDF4CAE953BE9"
+    }
+  ]
+}
