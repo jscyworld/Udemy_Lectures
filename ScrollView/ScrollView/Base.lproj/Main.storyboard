@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sky" translatesAutoresizingMaskIntoConstraints="NO" id="6W7-wJ-NzW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun" translatesAutoresizingMaskIntoConstraints="NO" id="u9c-xb-l36">
+                                <rect key="frame" x="213" y="28" width="146" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="LQl-X4-u0o"/>
+                                    <constraint firstAttribute="height" constant="128" id="YyC-t0-9PL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mountains" translatesAutoresizingMaskIntoConstraints="NO" id="jXn-au-zrs">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIL-HQ-LGA">
+                                <rect key="frame" x="77.5" y="0.0" width="220" height="667"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="eYZ-45-vQp"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u9c-xb-l36" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7tB-A2-8Po"/>
+                            <constraint firstItem="zIL-HQ-LGA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BYD-Y3-gFf"/>
+                            <constraint firstItem="6W7-wJ-NzW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CzF-FQ-gho"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6W7-wJ-NzW" secondAttribute="bottom" id="Kgb-bd-FyC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jXn-au-zrs" secondAttribute="bottom" id="N36-AB-6fW"/>
+                            <constraint firstAttribute="trailing" secondItem="jXn-au-zrs" secondAttribute="trailing" id="Oq6-jp-27E"/>
+                            <constraint firstAttribute="trailing" secondItem="6W7-wJ-NzW" secondAttribute="trailing" id="RQK-QB-ClJ"/>
+                            <constraint firstItem="zIL-HQ-LGA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fLO-km-iW1"/>
+                            <constraint firstItem="u9c-xb-l36" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="lQD-PP-og4"/>
+                            <constraint firstItem="jXn-au-zrs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="no0-CV-gk1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zIL-HQ-LGA" secondAttribute="bottom" id="ro0-cE-7nX"/>
+                            <constraint firstItem="6W7-wJ-NzW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xvF-dP-w0v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="zIL-HQ-LGA" id="xXf-zh-htm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Mountains" width="375" height="100"/>
+        <image name="Sky" width="375" height="667"/>
+        <image name="Sun" width="53" height="53"/>
+    </resources>
+</document>
