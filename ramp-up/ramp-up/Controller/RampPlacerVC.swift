@@ -12,7 +12,7 @@ import ARKit
 
 class RampPlacerVC: UIViewController, ARSCNViewDelegate {
 
-    @IBOutlet var sceneView: ARSCNView! // SceneKit + AR
+    @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class RampPlacerVC: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene(named: "art.scnassets/pipe.dae")!
         
         // Set the scene to the view
         sceneView.scene = scene
