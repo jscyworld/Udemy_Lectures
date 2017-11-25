@@ -13,6 +13,7 @@ class RampPickerVC: UIViewController {
     
     var sceneView: SCNView!
     var size: CGSize!
+    weak var rampPlacerVC: RampPlacerVC!
 
     init(size:CGSize) {
         super.init(nibName: nil, bundle: nil)
@@ -40,23 +41,42 @@ class RampPickerVC: UIViewController {
         camera.usesOrthographicProjection = true
         scene.rootNode.camera = camera
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        sceneView.addGestureRecognizer(tap)
+        
+        let rotate = SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: CGFloat(0.01 * Double.pi), z: 0, duration: 0.1))
+        
         var obj = SCNScene(named: "art.scnassets/pipe.dae")
         var node = obj?.rootNode.childNode(withName: "pipe", recursively: true)!
-        node?.scale = SCNVector3Make(0.0029, 0.0029, 0.0029)
-        node?.position = SCNVector3Make(-1, 0.7, -1)
+        node?.runAction(rotate)
+        node?.scale = SCNVector3Make(0.0027, 0.0027, 0.0027)
+        node?.position = SCNVector3Make(-0.95, 0.7, -1)
         scene.rootNode.addChildNode(node!)
         
         obj = SCNScene(named: "art.scnassets/pyramid.dae")
         node = obj?.rootNode.childNode(withName: "pyramid", recursively: true)!
+        node?.runAction(rotate)
         node?.scale = SCNVector3Make(0.0072, 0.0072, 0.0072)
-        node?.position = SCNVector3Make(-1, -0.4, -1)
+        node?.position = SCNVector3Make(-0.95, -0.4, -1)
         scene.rootNode.addChildNode(node!)
         
         obj = SCNScene(named: "art.scnassets/quarter.dae")
         node = obj?.rootNode.childNode(withName: "quarter", recursively: true)!
+        node?.runAction(rotate)
         node?.scale = SCNVector3Make(0.007, 0.007, 0.007)
-        node?.position = SCNVector3Make(-1, -2.2, -1)
+        node?.position = SCNVector3Make(-0.95, -2.2, -1)
         scene.rootNode.addChildNode(node!)
+    }
+    
+    @objc func handleTap(_ gestureRecogizer: UIGestureRecognizer) {
+        let p = gestureRecogizer.location(in: sceneView)
+        let hitResult = sceneView.hitTest(p, options: [:])
+        
+        if hitResult.count > 0 {
+            let node = hitResult[0].node
+            print(node.name!)
+            rampPlacerVC.onRampSelected(node.name!)
+        }
     }
 
     /*
