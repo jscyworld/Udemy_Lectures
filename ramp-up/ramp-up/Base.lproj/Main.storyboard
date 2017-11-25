@@ -32,12 +32,54 @@
                                     <action selector="RampBtnPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="pDq-WD-UOU"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-Al-9qX">
+                                <rect key="frame" x="10" y="616" width="200" height="41"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c00-xC-H93">
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="GU4-Fl-bm3"/>
+                                            <constraint firstAttribute="width" constant="41" id="K3J-uR-3BW"/>
+                                        </constraints>
+                                        <state key="normal" image="removeButton"/>
+                                        <connections>
+                                            <action selector="onRemovePressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="y5z-F9-DRX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilB-nV-kTZ">
+                                        <rect key="frame" x="53" y="0.0" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="kP5-m7-FqS"/>
+                                            <constraint firstAttribute="width" constant="41" id="xi2-0h-Agc"/>
+                                        </constraints>
+                                        <state key="normal" image="rotateButton"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCi-ja-JWf">
+                                        <rect key="frame" x="106" y="0.0" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="41" id="S4Q-lO-cz3"/>
+                                            <constraint firstAttribute="height" constant="41" id="rGW-1T-0sN"/>
+                                        </constraints>
+                                        <state key="normal" image="upArrow"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr9-Q3-zDX">
+                                        <rect key="frame" x="159" y="0.0" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="WRh-gi-WA1"/>
+                                            <constraint firstAttribute="width" constant="41" id="ZCw-Tv-WLs"/>
+                                        </constraints>
+                                        <state key="normal" image="downArrow"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3Jn-ms-FWG" firstAttribute="leading" secondItem="cwz-Hq-OpU" secondAttribute="leading" id="7RO-uB-0fY"/>
                             <constraint firstItem="3Jn-ms-FWG" firstAttribute="top" secondItem="6eJ-7e-JLR" secondAttribute="top" id="M4J-Of-rDE"/>
                             <constraint firstItem="cwz-Hq-OpU" firstAttribute="bottom" secondItem="N3U-cq-3cl" secondAttribute="bottom" constant="10" id="cUE-So-YQ5"/>
+                            <constraint firstItem="dSJ-Al-9qX" firstAttribute="leading" secondItem="cwz-Hq-OpU" secondAttribute="leading" constant="10" id="hiE-2o-NVU"/>
+                            <constraint firstItem="cwz-Hq-OpU" firstAttribute="bottom" secondItem="dSJ-Al-9qX" secondAttribute="bottom" constant="10" id="jir-IA-Ue2"/>
                             <constraint firstItem="cwz-Hq-OpU" firstAttribute="trailing" secondItem="N3U-cq-3cl" secondAttribute="trailing" constant="10" id="lDz-mU-giU"/>
                             <constraint firstItem="3Jn-ms-FWG" firstAttribute="bottom" secondItem="cwz-Hq-OpU" secondAttribute="bottom" id="oKb-hC-IJq"/>
                             <constraint firstItem="3Jn-ms-FWG" firstAttribute="trailing" secondItem="cwz-Hq-OpU" secondAttribute="trailing" id="xMp-H0-fz6"/>
@@ -45,7 +87,11 @@
                         <viewLayoutGuide key="safeArea" id="cwz-Hq-OpU"/>
                     </view>
                     <connections>
+                        <outlet property="controls" destination="dSJ-Al-9qX" id="Yuj-Hy-h7y"/>
+                        <outlet property="downBtn" destination="Cr9-Q3-zDX" id="upj-lt-xDO"/>
+                        <outlet property="rotateBtn" destination="ilB-nV-kTZ" id="Cih-wb-ZQz"/>
                         <outlet property="sceneView" destination="3Jn-ms-FWG" id="PUD-iV-oK7"/>
+                        <outlet property="upBtn" destination="WCi-ja-JWf" id="O56-hF-2q5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -54,6 +100,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="downArrow" width="32" height="32"/>
         <image name="rampIcon" width="107" height="71"/>
+        <image name="removeButton" width="32" height="32"/>
+        <image name="rotateButton" width="32" height="32"/>
+        <image name="upArrow" width="32" height="32"/>
     </resources>
 </document>
