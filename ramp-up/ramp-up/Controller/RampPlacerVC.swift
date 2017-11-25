@@ -14,10 +14,14 @@ class RampPlacerVC: UIViewController, ARSCNViewDelegate, UIPopoverPresentationCo
 
     
     @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet weak var controls: UIStackView!
+    @IBOutlet weak var controls1: UIStackView!
+    @IBOutlet weak var controls2: UIStackView!
     @IBOutlet weak var rotateBtn: UIButton!
     @IBOutlet weak var upBtn: UIButton!
     @IBOutlet weak var downBtn: UIButton!
+    @IBOutlet weak var leftBtn: UIButton!
+    @IBOutlet weak var rightBtn: UIButton!
+    
     var selectedRampName: String?
     var selectRamp: SCNNode?
     
@@ -40,14 +44,20 @@ class RampPlacerVC: UIViewController, ARSCNViewDelegate, UIPopoverPresentationCo
         let gesture1 = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress(gesture:)))
         let gesture2 = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress(gesture:)))
         let gesture3 = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress(gesture:)))
+        let gesture4 = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress(gesture:)))
+        let gesture5 = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress(gesture:)))
         
         gesture1.minimumPressDuration = 0.1
         gesture2.minimumPressDuration = 0.1
         gesture3.minimumPressDuration = 0.1
+        gesture4.minimumPressDuration = 0.1
+        gesture5.minimumPressDuration = 0.1
         
         rotateBtn.addGestureRecognizer(gesture1)
         upBtn.addGestureRecognizer(gesture2)
         downBtn.addGestureRecognizer(gesture3)
+        leftBtn.addGestureRecognizer(gesture4)
+        rightBtn.addGestureRecognizer(gesture5)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,7 +139,8 @@ class RampPlacerVC: UIViewController, ARSCNViewDelegate, UIPopoverPresentationCo
     
     func placeRamp(position: SCNVector3) {
         if let rampName = selectedRampName {
-            controls.isHidden = false
+            controls1.isHidden = false
+            controls2.isHidden = false
             let ramp = Ramp.getRampForName(rampName: rampName)
             selectRamp = ramp
             ramp.position = position
@@ -158,6 +169,12 @@ class RampPlacerVC: UIViewController, ARSCNViewDelegate, UIPopoverPresentationCo
                     ramp.runAction(move)
                 } else if gesture.view === downBtn {
                     let move = SCNAction.repeatForever(SCNAction.moveBy(x: 0, y: -0.08, z: 0, duration: 0.1))
+                    ramp.runAction(move)
+                } else if gesture.view === leftBtn {
+                    let move = SCNAction.repeatForever(SCNAction.moveBy(x: -0.08, y: 0, z: 0, duration: 0.1))
+                    ramp.runAction(move)
+                } else if gesture.view === rightBtn {
+                    let move = SCNAction.repeatForever(SCNAction.moveBy(x: 0.08, y: 0, z: 0, duration: 0.1))
                     ramp.runAction(move)
                 }
             }
